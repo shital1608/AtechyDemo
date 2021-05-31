@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import dagger.hilt.android.AndroidEntryPoint
 
 class LoginFragment: Fragment() {
     private val loginViewModel: LoginViewModel by viewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -19,7 +17,7 @@ class LoginFragment: Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
            setContent {
-               LoginScreen(loginViewModel)
+               activity?.let { LoginScreen(loginViewModel, it.applicationContext) }
            }
         }
     }

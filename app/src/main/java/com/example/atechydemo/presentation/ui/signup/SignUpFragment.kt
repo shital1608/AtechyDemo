@@ -1,4 +1,6 @@
 package com.example.atechydemo.presentation.ui.signup
 
-class SignUpFragment {
+import androidx.fragment.app.Fragment
+
+class SignUpFragment : Fragment(){
 }
