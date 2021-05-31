@@ -1,4 +1,6 @@
 package com.example.atechydemo.presentation.ui.signup
 
-class SignUpViewModel {
+import androidx.lifecycle.ViewModel
+
+class SignUpViewModel: ViewModel() {
 }

@@ -45,7 +45,7 @@ fun GradientButton(
 }
 
 @Composable
-fun CustomButton(modifier: Modifier = Modifier, email: String, password: String) {
+fun CustomButton(modifier: Modifier = Modifier, onClick: () -> Unit = { }) {
     val gradient =
         Brush.horizontalGradient(listOf(Color(0xFF3CB187), Color(0xFF6FCDD6)))
     Column(modifier = modifier) {
@@ -57,7 +57,7 @@ fun CustomButton(modifier: Modifier = Modifier, email: String, password: String)
                 .height(70.dp)
                 .padding(horizontal = 16.dp, vertical = 8.dp)
                 .align(Alignment.CenterHorizontally),
-            onClick = { println("entered email $email and password $password")}
+            onClick = onClick
         )
     }
 }
