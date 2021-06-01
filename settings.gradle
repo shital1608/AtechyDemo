@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AtechyDemo"
 include ':app'
+include ':fireBaseSdk'
+include ':fireBaseSdk'

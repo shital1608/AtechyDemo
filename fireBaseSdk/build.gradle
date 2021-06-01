@@ -41,11 +41,14 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    /*// Firebase SDK
+    // Firebase SDK
     implementation 'com.firebaseui:firebase-ui:0.6.0'
-    implementation 'com.google.firebase:firebase-firestore:22.1.2'
+    implementation 'com.google.firebase:firebase-firestore:23.0.0'
     implementation platform('com.google.firebase:firebase-bom:26.6.0')
     implementation 'com.google.firebase:firebase-database-ktx'
     implementation 'com.google.firebase:firebase-storage-ktx'
-    implementation 'com.google.firebase:firebase-auth-ktx'*/
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    //event bus dependency
+    implementation 'org.greenrobot:eventbus:3.2.0'
 }

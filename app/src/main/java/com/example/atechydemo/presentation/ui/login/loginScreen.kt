@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Icon
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -86,18 +87,24 @@ fun LoginScreen(loginViewModel: LoginViewModel, mContext: Context) {
             val email = loginViewModel.emailString.value
             val password = loginViewModel.password.value
             CustomButton(
-                modifier = Modifier.padding(top = 89.dp, start = 90.dp, end = 90.dp), onClick = {
-                    if(!email.isNullOrEmpty() || !password.isNullOrEmpty()){
-                        if(TextFieldUtil.validateEmail(email)){
-                            loginViewModel.loginApplication(email = email, password = password)
-                        }else{
-                            Toast.makeText(mContext, "Please enter valid email", Toast.LENGTH_SHORT).show()
-                        }
-                    }else{
-                        Toast.makeText(mContext, "Email and password should not be empty", Toast.LENGTH_SHORT).show()
+                modifier = Modifier.padding(top = 89.dp, start = 90.dp, end = 90.dp)
+            ) {
+                if (!email.isNullOrEmpty() || !password.isNullOrEmpty()) {
+                    if (TextFieldUtil.validateEmail(email)) {
+                        loginViewModel.loginApplication(email = email, password = password)
+                    } else {
+                        Toast.makeText(mContext, "Please enter valid email", Toast.LENGTH_SHORT)
+                            .show()
                     }
+                } else {
+                    Toast.makeText(
+                        mContext,
+                        "Email and password should not be empty",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
                 }
-            )
+            }
         }
     }
 

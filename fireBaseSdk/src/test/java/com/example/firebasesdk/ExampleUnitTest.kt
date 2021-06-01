@@ -1,4 +1,4 @@
-package com.example.authentication
+package com.example.firebasesdk
 
 import org.junit.Test
 
